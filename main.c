@@ -3,7 +3,7 @@
 
 void cell(char cell_1, char cell_2, char cell_3, char cell_4, char cell_5, char cell_6, char cell_7, char cell_8, char cell_9){
     system("cls");
-    printf("player 1: X     player 2: O\n \n");
+    printf("player 1: O     player 2: X\n \n");
     printf("_____ _____ _____\n");
     printf("     |     |     |\n");
     printf("  %c  |  %c  |  %c  |\n", cell_1, cell_2, cell_3);
@@ -51,8 +51,23 @@ int main()
     char selol[10] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     int i = 9, j, k, check_for;
     cell(selol[1],selol[2],selol[3],selol[4],selol[5],selol[6],selol[7],selol[8],selol[9]);
-    for(j = 1; j <= 9; j++){
+    for (j = 1; j<= 1; j++){
         printf("\n nobate player 1\n");
+        scanf("%d", &k);
+        if(k == 1) selol [1] = 'O';
+        if(k == 2) selol [2] = 'O';
+        if(k == 3) selol [3] = 'O';
+        if(k == 4) selol [4] = 'O';
+        if(k == 5) selol [5] = 'O';
+        if(k == 6) selol [6] = 'O';
+        if(k == 7) selol [7] = 'O';
+        if(k == 8) selol [8] = 'O';
+        if(k == 9) selol [9] = 'O';
+        cell(selol[1],selol[2],selol[3],selol[4],selol[5],selol[6],selol[7],selol[8],selol[9]);
+    }
+
+    for(j = 1; j <= 4; j++){
+        printf("\n nobate player 2\n");
         scanf("%d", &k);
         if(k == 1) selol [1] = 'X';
         if(k == 2) selol [2] = 'X';
@@ -67,12 +82,12 @@ int main()
         check_for = check(selol[1],selol[2],selol[3],selol[4],selol[5],selol[6],selol[7],selol[8],selol[9]);
         if (check_for == 9){
             j = 10;
-            printf("\n \n ***Player 1 is WINNER*** \a");
-            continue;
+            printf("\n \n ***Player 2 is WINNER*** \a");
+            return 0;
         }
 
 
-        printf("\n nobate player 2\n");
+        printf("\n nobate player 1\n");
         scanf("%d", &k);
         if(k == 1) selol [1] = 'O';
         if(k == 2) selol [2] = 'O';
@@ -87,12 +102,12 @@ int main()
         check_for = check(selol[1],selol[2],selol[3],selol[4],selol[5],selol[6],selol[7],selol[8],selol[9]);
         if (check_for == 10){
             j = 10;
-            printf("\n \n ***Player 2 is WINNER*** \a");
-            continue;
+            printf("\n \n ***Player 1 is WINNER*** \a");
+            return 0;
         }
 
     }
-    getchar();
+    printf("\n\n***bazi bedone barande***\a");
 
     return 0;
 }
